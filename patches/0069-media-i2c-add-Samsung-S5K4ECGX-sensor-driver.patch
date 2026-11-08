@@ -1,7 +1,7 @@
-From 48d94a742a256bad985f9cc27a14fa25da8a89ca Mon Sep 17 00:00:00 2001
+From 59031690f5a5328a06021d3c95e5cc79f14e9c19 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 16:04:22 +0000
-Subject: [PATCH 069/106] media: i2c: add Samsung S5K4ECGX sensor driver
+Subject: [PATCH 069/110] media: i2c: add Samsung S5K4ECGX sensor driver
 
 The S5K4ECGX is a 5 MP sensor with its own ISP and a two-lane MIPI
 CSI-2 output delivering UYVY; it is the rear camera of the Samsung
@@ -48,10 +48,10 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  create mode 100644 drivers/media/i2c/s5k4ecgx.c
 
 diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-index 05e831d90..dfb806e56 100644
+index b399dcc3f..2e20bf35a 100644
 --- a/drivers/media/i2c/Kconfig
 +++ b/drivers/media/i2c/Kconfig
-@@ -804,6 +804,22 @@ config VIDEO_S5K3M5
+@@ -846,6 +846,22 @@ config VIDEO_S5K3M5
  	  To compile this driver as a module, choose M here: the
  	  module will be called s5k3m5.
  
@@ -75,10 +75,10 @@ index 05e831d90..dfb806e56 100644
  	tristate "Samsung S5K5BAF sensor support"
  	help
 diff --git a/drivers/media/i2c/Makefile b/drivers/media/i2c/Makefile
-index e24e1b31f..b099146f5 100644
+index 1c78b0dcd..efc645194 100644
 --- a/drivers/media/i2c/Makefile
 +++ b/drivers/media/i2c/Makefile
-@@ -130,6 +130,7 @@ obj-$(CONFIG_VIDEO_RDACM21) += rdacm21.o
+@@ -134,6 +134,7 @@ obj-$(CONFIG_VIDEO_RDACM21) += rdacm21.o
  obj-$(CONFIG_VIDEO_RJ54N1) += rj54n1cb0c.o
  obj-$(CONFIG_VIDEO_S5C73M3) += s5c73m3/
  obj-$(CONFIG_VIDEO_S5K3M5) += s5k3m5.o
@@ -693,5 +693,5 @@ index 000000000..3af8cb3f8
 +MODULE_DESCRIPTION("Samsung S5K4ECGX camera sensor");
 +MODULE_LICENSE("GPL");
 -- 
-2.47.3
+2.34.1
 

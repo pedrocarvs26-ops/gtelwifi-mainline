@@ -3,19 +3,21 @@
 > **Developed with AI assistance** (Claude, by Anthropic), like the rest of this repository. Check the policy of any
 > project before you submit code from here to it.
 
-This branch (`lineageos`) carries everything needed to build LineageOS 24.0 (Android 17, armv7) for the SM-T560
-(`gtelwifi`) on mainline Linux 7.3.1:
+This branch (`lineageos-7.4`) carries everything needed to build LineageOS 24.0 (Android 17, armv7) for the SM-T560
+(`gtelwifi`) on mainline Linux 7.4-rc1 (and Linux 7.3.1):
 
 | Path | Content |
 |---|---|
-| `patches/` | the kernel patch series against Linux v7.3.1 (0001-0106). 0001-0079 carry a Signed-off-by, 0080-0106 do not yet |
+| `patches/` | the kernel patch series against Linux v7.4-rc1 (0001-0110), including DRM/V4L2 updates, C-Binder restore, and built-in Wi-Fi/BT config |
 | `lineageos/device/samsung/gtelwifi/` | the device tree (`device/samsung/gtelwifi`) |
-| `lineageos/kernel/` | the Android kernel config fragment and the check scripts that merge it with the LineageOS/AOSP fragments |
+| `lineageos/kernel/` | the Android kernel config fragment, check scripts, and Linux 7.4-rc1 updates |
 | `lineageos/patches/<project>/` | patches for other projects of the LineageOS tree (`git am` in that project): libcamera, minigbm, system/core, frameworks/base and a few more |
 | `lineageos/local_manifests/gtelwifi.xml` | the local manifest (device/mainline/common and its dependencies) |
 | `lineageos/scripts/` | `mkrepos.sh` (device and kernel repositories for the manifest), `build.sh`, `flash-system.sh` |
 | `lineageos/installer/` | the TWRP installer: `update-binary.c` (static armhf, writes KERNEL and SYSTEM) and `mkzip.py` (builds the install and update zips) |
 | `lineageos/twrp/` | TWRP 3.7.1 (TWRP 12.1) for this tablet on the same mainline kernel: device tree, one patch for `bootable/recovery`, `build-kernel.sh`; see its README |
+
+> **Kernel Repository**: [pedrocarvs26-ops/android_kernel_samsung_sc7730se-7.4](https://github.com/pedrocarvs26-ops/android_kernel_samsung_sc7730se-7.4) (branches `main` and `gtelwifi-7.4-rc1`) contains the full rebased kernel git tree ready to build.
 
 ## Hardware support
 

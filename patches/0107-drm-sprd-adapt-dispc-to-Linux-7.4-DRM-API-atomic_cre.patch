@@ -1,0 +1,44 @@
+From 3b8d20b0f2dd28a557d66a892b10c6dacb4a89f3 Mon Sep 17 00:00:00 2001
+From: Pedro Carvs <pedrocarvs26@gmail.com>
+Date: Sun, 8 Nov 2026 14:59:57 +0000
+Subject: [PATCH 107/110] drm/sprd: adapt dispc to Linux 7.4 DRM API
+ (atomic_create_state and drmm_encoder_init)
+
+---
+ drivers/gpu/drm/sprd/sprd_dispc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/gpu/drm/sprd/sprd_dispc.c b/drivers/gpu/drm/sprd/sprd_dispc.c
+index 78dde82fe..3ca9de384 100644
+--- a/drivers/gpu/drm/sprd/sprd_dispc.c
++++ b/drivers/gpu/drm/sprd/sprd_dispc.c
+@@ -367,7 +367,7 @@ static const struct drm_plane_funcs sprd_dispc_plane_funcs = {
+ 	.update_plane = drm_atomic_helper_update_plane,
+ 	.disable_plane = drm_atomic_helper_disable_plane,
+ 	.destroy = drm_plane_cleanup,
+-	.reset = drm_atomic_helper_plane_reset,
++	.atomic_create_state = drm_atomic_helper_plane_create_state,
+ 	.atomic_duplicate_state = drm_atomic_helper_plane_duplicate_state,
+ 	.atomic_destroy_state = drm_atomic_helper_plane_destroy_state,
+ };
+@@ -609,7 +609,7 @@ static const struct drm_crtc_helper_funcs sprd_dispc_crtc_helper_funcs = {
+ };
+ 
+ static const struct drm_crtc_funcs sprd_dispc_crtc_funcs = {
+-	.reset = drm_atomic_helper_crtc_reset,
++	.atomic_create_state = drm_atomic_helper_crtc_create_state,
+ 	.destroy = drm_crtc_cleanup,
+ 	.set_config = drm_atomic_helper_set_config,
+ 	.page_flip = drm_atomic_helper_page_flip,
+@@ -838,7 +838,7 @@ static int sprd_dispc_probe(struct platform_device *pdev)
+ 		return ret;
+ 	drm_crtc_helper_add(&d->crtc, &sprd_dispc_crtc_helper_funcs);
+ 
+-	ret = drm_simple_encoder_init(drm, &d->encoder, DRM_MODE_ENCODER_DSI);
++	ret = drmm_encoder_init(drm, &d->encoder, NULL, DRM_MODE_ENCODER_DSI, NULL);
+ 	if (ret)
+ 		return ret;
+ 	d->encoder.possible_crtcs = drm_crtc_mask(&d->crtc);
+-- 
+2.34.1
+

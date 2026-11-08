@@ -1,7 +1,7 @@
-From fa007f1c4779860c5ac8d33450f117128e9022ba Mon Sep 17 00:00:00 2001
+From 69309a4f76be641d279bc778996c0ad1dd80ea7f Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 23:00:48 +0000
-Subject: [PATCH 086/106] dt-bindings: describe the SC7730 and SC2723 hardware
+Subject: [PATCH 086/110] dt-bindings: describe the SC7730 and SC2723 hardware
  of the gtelwifi port
 
 Add schemas for every compatible string the gtelwifi device tree uses
@@ -74,10 +74,10 @@ Assisted-by: Claude Opus 5.5
  create mode 100644 Documentation/devicetree/bindings/timer/sprd,sc8830-timer.yaml
 
 diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
-index 5be89c584..f96ee29c4 100644
+index 96136b70d..92c1dc4de 100644
 --- a/Documentation/devicetree/bindings/arm/cpus.yaml
 +++ b/Documentation/devicetree/bindings/arm/cpus.yaml
-@@ -281,6 +281,7 @@ properties:
+@@ -289,6 +289,7 @@ properties:
            - rockchip,rk3036-smp
            - rockchip,rk3066-smp
            - socionext,milbeaut-m10v-smp
@@ -467,7 +467,7 @@ index 94647219c..ce1ca71a2 100644
    reg:
      maxItems: 1
 diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-utgard.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-utgard.yaml
-index c8d0d9192..7e2f95760 100644
+index d68fe8c7d..ad9a84ca6 100644
 --- a/Documentation/devicetree/bindings/gpu/arm,mali-utgard.yaml
 +++ b/Documentation/devicetree/bindings/gpu/arm,mali-utgard.yaml
 @@ -33,6 +33,7 @@ properties:
@@ -2242,5 +2242,5 @@ index 000000000..c1d52bd04
 +    };
 +...
 -- 
-2.47.3
+2.34.1
 

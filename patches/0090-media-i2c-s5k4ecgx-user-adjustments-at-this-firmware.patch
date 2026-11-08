@@ -1,7 +1,7 @@
-From bd348fb83d117792b07925414dd573c20dd8909c Mon Sep 17 00:00:00 2001
+From a1272f00e7e737de9b822e703d02054be2cd6243 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Tue, 3 Nov 2026 11:27:54 +0000
-Subject: [PATCH 090/106] media: i2c: s5k4ecgx: user adjustments at this
+Subject: [PATCH 090/110] media: i2c: s5k4ecgx: user adjustments at this
  firmware's addresses
 
 The brightness, contrast and saturation controls wrote 0x7000022c,
@@ -56,5 +56,5 @@ index 551858cf9..991727baf 100644
  			  -127, 127, 1, 0);
  	v4l2_ctrl_new_std(hdl, &s5k_ctrl_ops, V4L2_CID_SATURATION,
 -- 
-2.47.3
+2.34.1
 

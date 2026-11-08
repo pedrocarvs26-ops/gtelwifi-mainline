@@ -1,7 +1,7 @@
-From 5ea376bd768b5f7dd40d786258db892289732ec9 Mon Sep 17 00:00:00 2001
+From 5a7bd4a0a49fbae3c38d9c1eb010d81e67a8c7fc Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 20:31:20 +0000
-Subject: [PATCH 075/106] dmaengine: sprd: let virt-dma free the terminated
+Subject: [PATCH 075/110] dmaengine: sprd: let virt-dma free the terminated
  descriptor
 
 A link-list transfer is cyclic: its interrupt calls vchan_cyclic_callback(),
@@ -21,10 +21,10 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  1 file changed, 17 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/dma/sprd-dma.c b/drivers/dma/sprd-dma.c
-index ff8685e9e..6abc0691e 100644
+index b5b9891d8..7d6b1cc9a 100644
 --- a/drivers/dma/sprd-dma.c
 +++ b/drivers/dma/sprd-dma.c
-@@ -671,11 +671,11 @@ static void sprd_dma_free_chan_resources(struct dma_chan *chan)
+@@ -651,11 +651,11 @@ static void sprd_dma_free_chan_resources(struct dma_chan *chan)
  		cur_vd = &schan->cur_desc->vd;
  
  	sprd_dma_stop(schan);
@@ -39,7 +39,7 @@ index ff8685e9e..6abc0691e 100644
  	vchan_free_chan_resources(&schan->vc);
  	pm_runtime_put(chan->device->dev);
  }
-@@ -1125,16 +1125,26 @@ static int sprd_dma_terminate_all(struct dma_chan *chan)
+@@ -1105,16 +1105,26 @@ static int sprd_dma_terminate_all(struct dma_chan *chan)
  
  	sprd_dma_stop(schan);
  
@@ -69,7 +69,7 @@ index ff8685e9e..6abc0691e 100644
  static void sprd_dma_free_desc(struct virt_dma_desc *vd)
  {
  	struct sprd_dma_desc *sdesc = to_sprd_dma_desc(vd);
-@@ -1254,6 +1264,7 @@ static int sprd_dma_probe(struct platform_device *pdev)
+@@ -1235,6 +1245,7 @@ static int sprd_dma_probe(struct platform_device *pdev)
  	sdev->dma_dev.device_pause = sprd_dma_pause;
  	sdev->dma_dev.device_resume = sprd_dma_resume;
  	sdev->dma_dev.device_terminate_all = sprd_dma_terminate_all;
@@ -78,5 +78,5 @@ index ff8685e9e..6abc0691e 100644
  	for (i = 0; i < chn_count; i++) {
  		dma_chn = &sdev->channels[i];
 -- 
-2.47.3
+2.34.1
 

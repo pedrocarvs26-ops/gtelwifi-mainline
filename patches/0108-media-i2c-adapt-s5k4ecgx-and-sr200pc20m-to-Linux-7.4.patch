@@ -1,0 +1,54 @@
+From 382151bcc1f08d5d10a62304fe126df2341a4c33 Mon Sep 17 00:00:00 2001
+From: Pedro Carvs <pedrocarvs26@gmail.com>
+Date: Sun, 8 Nov 2026 15:03:12 +0000
+Subject: [PATCH 108/110] media: i2c: adapt s5k4ecgx and sr200pc20m to Linux
+ 7.4 v4l2_subdev_client_info API
+
+---
+ drivers/media/i2c/s5k4ecgx.c   | 2 ++
+ drivers/media/i2c/sr200pc20m.c | 2 ++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/drivers/media/i2c/s5k4ecgx.c b/drivers/media/i2c/s5k4ecgx.c
+index 05b766d51..19dc8f89e 100644
+--- a/drivers/media/i2c/s5k4ecgx.c
++++ b/drivers/media/i2c/s5k4ecgx.c
+@@ -586,6 +586,7 @@ static int s5k_enum_frame_size(struct v4l2_subdev *sd,
+ }
+ 
+ static int s5k_set_fmt(struct v4l2_subdev *sd,
++		       const struct v4l2_subdev_client_info *ci,
+ 		       struct v4l2_subdev_state *state,
+ 		       struct v4l2_subdev_format *format)
+ {
+@@ -604,6 +605,7 @@ static int s5k_set_fmt(struct v4l2_subdev *sd,
+ }
+ 
+ static int s5k_get_selection(struct v4l2_subdev *sd,
++			     const struct v4l2_subdev_client_info *ci,
+ 			     struct v4l2_subdev_state *state,
+ 			     struct v4l2_subdev_selection *sel)
+ {
+diff --git a/drivers/media/i2c/sr200pc20m.c b/drivers/media/i2c/sr200pc20m.c
+index 8d52a4aba..134d26d90 100644
+--- a/drivers/media/i2c/sr200pc20m.c
++++ b/drivers/media/i2c/sr200pc20m.c
+@@ -250,6 +250,7 @@ static int sr200_enum_frame_size(struct v4l2_subdev *sd,
+ }
+ 
+ static int sr200_set_fmt(struct v4l2_subdev *sd,
++			 const struct v4l2_subdev_client_info *ci,
+ 			 struct v4l2_subdev_state *state,
+ 			 struct v4l2_subdev_format *format)
+ {
+@@ -270,6 +271,7 @@ static int sr200_set_fmt(struct v4l2_subdev *sd,
+ }
+ 
+ static int sr200_get_selection(struct v4l2_subdev *sd,
++			       const struct v4l2_subdev_client_info *ci,
+ 			       struct v4l2_subdev_state *state,
+ 			       struct v4l2_subdev_selection *sel)
+ {
+-- 
+2.34.1
+

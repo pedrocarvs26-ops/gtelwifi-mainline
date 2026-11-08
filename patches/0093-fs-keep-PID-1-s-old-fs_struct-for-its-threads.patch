@@ -1,7 +1,7 @@
-From f235ac6774ff0c569a7ca0199ea1f5b0b37c7fe5 Mon Sep 17 00:00:00 2001
+From aa4368fd882bf41621d40cec523f1f2a6f59a494 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Wed, 4 Nov 2026 14:29:09 +0000
-Subject: [PATCH 093/106] fs: keep PID 1's old fs_struct for its threads
+Subject: [PATCH 093/110] fs: keep PID 1's old fs_struct for its threads
 
 Since 7.x validate_fs_switch() reverts the fs_struct that PID 1 leaves
 behind to nullfs when PID 1 stops sharing it (unshare(CLONE_FS) or
@@ -46,5 +46,5 @@ index 34699f3b6..5a08245f2 100644
  
  struct fs_struct *switch_fs_struct(struct fs_struct *new_fs)
 -- 
-2.47.3
+2.34.1
 

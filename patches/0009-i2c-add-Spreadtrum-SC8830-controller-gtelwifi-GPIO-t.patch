@@ -1,7 +1,7 @@
-From 0fa712ab514f5d2ada1ec4d831e7b83f1375d2bf Mon Sep 17 00:00:00 2001
+From 04f59c2433340f0ceaf4aad37f2ac22648e7cd85 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 16:55:56 +0000
-Subject: [PATCH 009/106] i2c: add Spreadtrum SC8830 controller; gtelwifi:
+Subject: [PATCH 009/110] i2c: add Spreadtrum SC8830 controller; gtelwifi:
  GPIO, touchscreen
 
 The 32-bit Spreadtrum SC8830/SC7730 I2C controllers are a byte-at-a-time
@@ -109,10 +109,10 @@ index 68e359579..792b011a9 100644
  			compatible = "sprd,sc9836-uart";
  			reg = <0x70100000 0x100>;
 diff --git a/drivers/i2c/busses/Kconfig b/drivers/i2c/busses/Kconfig
-index d7b895083..3044937cb 100644
+index 275aaa7f3..3e776cb0c 100644
 --- a/drivers/i2c/busses/Kconfig
 +++ b/drivers/i2c/busses/Kconfig
-@@ -1166,6 +1166,14 @@ config I2C_SPRD
+@@ -1178,6 +1178,14 @@ config I2C_SPRD
  	  If you say yes to this option, support will be included for the
  	  Spreadtrum I2C interface.
  
@@ -128,10 +128,10 @@ index d7b895083..3044937cb 100644
  	tristate "STMicroelectronics SSC I2C support"
  	depends on ARCH_STI || COMPILE_TEST
 diff --git a/drivers/i2c/busses/Makefile b/drivers/i2c/busses/Makefile
-index 3755c54b3..2a97b4273 100644
+index e5440de0f..5310712f0 100644
 --- a/drivers/i2c/busses/Makefile
 +++ b/drivers/i2c/busses/Makefile
-@@ -111,6 +111,7 @@ obj-$(CONFIG_I2C_SH7760)	+= i2c-sh7760.o
+@@ -112,6 +112,7 @@ obj-$(CONFIG_I2C_SH7760)	+= i2c-sh7760.o
  obj-$(CONFIG_I2C_SH_MOBILE)	+= i2c-sh_mobile.o
  obj-$(CONFIG_I2C_SIMTEC)	+= i2c-simtec.o
  obj-$(CONFIG_I2C_SPRD)		+= i2c-sprd.o
@@ -379,5 +379,5 @@ index 000000000..8fb9cdb88
 +MODULE_DESCRIPTION("Spreadtrum SC8830/SC7730 I2C controller");
 +MODULE_LICENSE("GPL");
 -- 
-2.47.3
+2.34.1
 

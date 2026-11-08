@@ -1,7 +1,7 @@
-From 76f52d466319290e6a4ffca4d49e2f8b39e7654d Mon Sep 17 00:00:00 2001
+From 7931fc66c518f90fead8917aa873819322898f7a Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 16:16:36 +0000
-Subject: [PATCH 072/106] media: sprd: sc7730-dcam: implement
+Subject: [PATCH 072/110] media: sprd: sc7730-dcam: implement
  VIDIOC_ENUM_FRAMESIZES
 
 libcamera enumerates the frame sizes of each pixel format on the video
@@ -52,5 +52,5 @@ index 6f5dc3dc5..d8c954be6 100644
  	.vidioc_try_fmt_vid_cap = dcam_try_fmt,
  	.vidioc_s_fmt_vid_cap = dcam_s_fmt,
 -- 
-2.47.3
+2.34.1
 

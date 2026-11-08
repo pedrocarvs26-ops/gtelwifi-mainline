@@ -1,7 +1,7 @@
-From 3baa93388d478112119a174f0337cd2c9480081f Mon Sep 17 00:00:00 2001
+From 5be47214b133f96a0e200b6d0f72ae8b5db07ec3 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 15:28:47 +0000
-Subject: [PATCH 005/106] ARM: sprd: shared ADI helpers, restart via SC2723
+Subject: [PATCH 005/110] ARM: sprd: shared ADI helpers, restart via SC2723
  PMIC watchdog
 
 Move the ADI bus access out of the USB bring-up into adi.c so it can be
@@ -448,5 +448,5 @@ index 70b8a279f..c997c5263 100644
  }
  subsys_initcall(sprd_usb_bringup);
 -- 
-2.47.3
+2.34.1
 

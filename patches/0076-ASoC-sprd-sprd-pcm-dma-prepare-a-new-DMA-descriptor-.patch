@@ -1,7 +1,7 @@
-From 7adff94fd60e6c96f624280366b922a2ed983dbc Mon Sep 17 00:00:00 2001
+From ef948a02a8195a947efcf22b32d47642fd93eafd Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 20:31:21 +0000
-Subject: [PATCH 076/106] ASoC: sprd: sprd-pcm-dma: prepare a new DMA
+Subject: [PATCH 076/110] ASoC: sprd: sprd-pcm-dma: prepare a new DMA
  descriptor for every start
 
 The descriptor was prepared once in hw_params and submitted on every
@@ -37,7 +37,7 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  1 file changed, 45 insertions(+), 20 deletions(-)
 
 diff --git a/sound/soc/sprd/sprd-pcm-dma.c b/sound/soc/sprd/sprd-pcm-dma.c
-index 2d8d447a6..77ea36ccc 100644
+index 0a971628f..e17461af4 100644
 --- a/sound/soc/sprd/sprd-pcm-dma.c
 +++ b/sound/soc/sprd/sprd-pcm-dma.c
 @@ -8,6 +8,7 @@
@@ -56,7 +56,7 @@ index 2d8d447a6..77ea36ccc 100644
  		}
  	}
  }
-@@ -195,12 +197,8 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
+@@ -196,12 +198,8 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
  	struct snd_soc_pcm_runtime *rtd = snd_soc_substream_to_rtd(substream);
  	struct sprd_pcm_dma_params *dma_params;
  	size_t totsize = params_buffer_bytes(params);
@@ -70,7 +70,7 @@ index 2d8d447a6..77ea36ccc 100644
  
  	dma_params = snd_soc_dai_get_dma_data(snd_soc_rtd_to_cpu(rtd, 0), substream);
  	if (!dma_params) {
-@@ -225,17 +223,40 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
+@@ -226,17 +224,40 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
  	dma_private->interleaved = channels > 1 &&
  		(params_access(params) == SNDRV_PCM_ACCESS_RW_INTERLEAVED ||
  		 params_access(params) == SNDRV_PCM_ACCESS_MMAP_INTERLEAVED);
@@ -117,7 +117,7 @@ index 2d8d447a6..77ea36ccc 100644
  
  	for (i = 0; i < channels; i++) {
  		struct sprd_pcm_dma_data *data = &dma_private->data[i];
-@@ -246,6 +267,13 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
+@@ -247,6 +268,13 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
  		enum dma_transfer_direction dir;
  		struct scatterlist *sgt = sg;
  
@@ -131,7 +131,7 @@ index 2d8d447a6..77ea36ccc 100644
  		config.src_maxburst = dma_params->fragment_len[i];
  		config.src_addr_width = dma_params->datawidth[i];
  		config.dst_addr_width = dma_params->datawidth[i];
-@@ -293,7 +321,7 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
+@@ -294,7 +322,7 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
  		if (ret) {
  			dev_err(component->dev,
  				"failed to set slave configuration: %d\n", ret);
@@ -140,7 +140,7 @@ index 2d8d447a6..77ea36ccc 100644
  		}
  
  		/*
-@@ -308,7 +336,7 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
+@@ -309,7 +337,7 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
  		if (!data->desc) {
  			dev_err(component->dev, "failed to prepare slave sg\n");
  			ret = -ENOMEM;
@@ -149,7 +149,7 @@ index 2d8d447a6..77ea36ccc 100644
  		}
  
  		if (!runtime->no_period_wakeup) {
-@@ -317,14 +345,8 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
+@@ -318,14 +346,8 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
  		}
  	}
  
@@ -165,7 +165,7 @@ index 2d8d447a6..77ea36ccc 100644
  	return ret;
  }
  
-@@ -360,6 +382,8 @@ static int sprd_pcm_trigger(struct snd_soc_component *component,
+@@ -361,6 +383,8 @@ static int sprd_pcm_trigger(struct snd_soc_component *component,
  				return ret;
  			}
  
@@ -174,7 +174,7 @@ index 2d8d447a6..77ea36ccc 100644
  			dma_async_issue_pending(data->chan);
  		}
  
-@@ -479,6 +503,7 @@ static const struct snd_soc_component_driver sprd_soc_component = {
+@@ -480,6 +504,7 @@ static const struct snd_soc_component_driver sprd_soc_component = {
  	.close		= sprd_pcm_close,
  	.hw_params	= sprd_pcm_hw_params,
  	.hw_free	= sprd_pcm_hw_free,
@@ -183,5 +183,5 @@ index 2d8d447a6..77ea36ccc 100644
  	.pointer	= sprd_pcm_pointer,
  	.pcm_new	= sprd_pcm_new,
 -- 
-2.47.3
+2.34.1
 

@@ -1,7 +1,7 @@
-From 5e25ccc5ef2315fc1e0ad45d8ad4b58b46879c46 Mon Sep 17 00:00:00 2001
+From b62d26ba8c95cd70450a75beb2a9ba19ed309ce8 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 15:19:58 +0000
-Subject: [PATCH 004/106] mmc: sdhci-sc7730: add SC7730/SC8830 host glue,
+Subject: [PATCH 004/110] mmc: sdhci-sc7730: add SC7730/SC8830 host glue,
  enable gtelwifi eMMC
 
 The 32-bit Spreadtrum "shark" SD/eMMC hosts are plain SDHCI 3.0 with a
@@ -73,7 +73,7 @@ index e5caae400..5a5260fd6 100644
  			compatible = "sprd,sc9836-uart";
  			reg = <0x70100000 0x100>;
 diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
-index 4f060d3e5..73ffcd662 100644
+index 79bfc425e..8379c9320 100644
 --- a/drivers/mmc/host/Kconfig
 +++ b/drivers/mmc/host/Kconfig
 @@ -714,6 +714,17 @@ config MMC_SDHCI_SPRD
@@ -95,7 +95,7 @@ index 4f060d3e5..73ffcd662 100644
  	tristate
  
 diff --git a/drivers/mmc/host/Makefile b/drivers/mmc/host/Makefile
-index ee412e6b8..1d7086983 100644
+index fd043afab..6daea8745 100644
 --- a/drivers/mmc/host/Makefile
 +++ b/drivers/mmc/host/Makefile
 @@ -102,6 +102,7 @@ obj-$(CONFIG_MMC_SDHCI_MICROCHIP_PIC32)	+= sdhci-pic32.o
@@ -223,5 +223,5 @@ index 000000000..ccba3b5c8
 +MODULE_DESCRIPTION("SDHCI glue for Spreadtrum SC7730/SC8830");
 +MODULE_LICENSE("GPL");
 -- 
-2.47.3
+2.34.1
 

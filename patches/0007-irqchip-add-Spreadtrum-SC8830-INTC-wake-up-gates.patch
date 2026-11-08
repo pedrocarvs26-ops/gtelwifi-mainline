@@ -1,7 +1,7 @@
-From 5a2ce80dfd737949132fe957b449b5cb7c6c07e8 Mon Sep 17 00:00:00 2001
+From 3ef430fde0228175794bc47a478bd2d9871f1479 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 15:53:21 +0000
-Subject: [PATCH 007/106] irqchip: add Spreadtrum SC8830 INTC wake-up gates
+Subject: [PATCH 007/110] irqchip: add Spreadtrum SC8830 INTC wake-up gates
 
 Once all cores are in WFI the GIC clock on SC8830/SC7730 stops and only
 interrupts enabled in one of the four INTC blocks wake the CPU. They still
@@ -75,7 +75,7 @@ index 5a5260fd6..68e359579 100644
  			compatible = "sprd,sc8830-timer";
  			reg = <0x40050000 0x60>,	/* AON timer block */
 diff --git a/drivers/irqchip/Kconfig b/drivers/irqchip/Kconfig
-index 20b77fbc5..35f22e95f 100644
+index 136bab41f..8f007ec69 100644
 --- a/drivers/irqchip/Kconfig
 +++ b/drivers/irqchip/Kconfig
 @@ -435,6 +435,14 @@ config IMX_GPCV2
@@ -94,7 +94,7 @@ index 20b77fbc5..35f22e95f 100644
  	def_bool y if MACH_ASM9260 || ARCH_MXS
  	select IRQ_DOMAIN
 diff --git a/drivers/irqchip/Makefile b/drivers/irqchip/Makefile
-index ab33cccd8..3613ba101 100644
+index 16a5fd126..928be374a 100644
 --- a/drivers/irqchip/Makefile
 +++ b/drivers/irqchip/Makefile
 @@ -78,6 +78,7 @@ obj-$(CONFIG_ARCH_SA1100)		+= irq-sa11x0.o
@@ -262,5 +262,5 @@ index 000000000..8bca8a2db
 +}
 +IRQCHIP_DECLARE(sc8830_intc, "sprd,sc8830-intc", sc8830_intc_init);
 -- 
-2.47.3
+2.34.1
 

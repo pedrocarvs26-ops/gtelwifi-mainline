@@ -1,7 +1,7 @@
-From 6524c8c39965e5c533543b4ea087f199c29beeeb Mon Sep 17 00:00:00 2001
+From 920844e91bef40b046563ff71e9dbf72708d91f6 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Wed, 4 Nov 2026 19:45:30 +0000
-Subject: [PATCH 097/106] mmc: sdhci-sc7730: serialize the shared AP AHB gate
+Subject: [PATCH 097/110] mmc: sdhci-sc7730: serialize the shared AP AHB gate
  and reset bits
 
 SDIO0 (microSD) and SDIO1 (WLAN) open their gate in the AP AHB enable
@@ -170,5 +170,5 @@ index 494a4d8d2..3bc172086 100644
  	clk_cfg = devm_platform_ioremap_resource_byname(pdev, "clk-cfg");
  	if (IS_ERR(clk_cfg))
 -- 
-2.47.3
+2.34.1
 

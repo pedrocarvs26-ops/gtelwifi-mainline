@@ -1,7 +1,7 @@
-From 6c99e088cff73ce199832e9ad635caf1a257e839 Mon Sep 17 00:00:00 2001
+From 175eab52e4cfcf1b5b44a11e487034564e1abc1e Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Tue, 3 Nov 2026 12:13:18 +0000
-Subject: [PATCH 092/106] media: i2c: s5k4ecgx: at least 15 fps, preview sizes
+Subject: [PATCH 092/110] media: i2c: s5k4ecgx: at least 15 fps, preview sizes
  up to 800x480
 
 The init table allows a longest frame time of 100 ms in preview
@@ -74,5 +74,5 @@ index 991727baf..ec656f69a 100644
  			ret = s5k_write_table(s5k, s5k->mode->fw, true);
  		if (ret)
 -- 
-2.47.3
+2.34.1
 

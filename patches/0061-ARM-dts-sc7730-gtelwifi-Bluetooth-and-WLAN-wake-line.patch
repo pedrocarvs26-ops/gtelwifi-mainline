@@ -1,7 +1,7 @@
-From 6513a90fda6e928559db7a8903b59e0617aa2171 Mon Sep 17 00:00:00 2001
+From 9e538762714da0c303ff934eb42a0bff4ff218c8 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 12:46:41 +0000
-Subject: [PATCH 061/106] ARM: dts: sc7730: gtelwifi: Bluetooth and WLAN wake
+Subject: [PATCH 061/110] ARM: dts: sc7730: gtelwifi: Bluetooth and WLAN wake
  lines
 
 The vendor tree wires BT_WAKE to GPIO 45 and HOST_WAKE to GPIO 46
@@ -66,5 +66,5 @@ index 1a2f74355..5d8d09eaa 100644
  };
  
 -- 
-2.47.3
+2.34.1
 

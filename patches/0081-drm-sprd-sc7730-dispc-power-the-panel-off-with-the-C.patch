@@ -1,7 +1,7 @@
-From 656277cca19e24139889460184da2ee3a32e55e9 Mon Sep 17 00:00:00 2001
+From 2903e8026c875653f85594d60133993d52ee2325 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 22:39:35 +0000
-Subject: [PATCH 081/106] drm/sprd: sc7730-dispc: power the panel off with the
+Subject: [PATCH 081/110] drm/sprd: sc7730-dispc: power the panel off with the
  CRTC
 
 The CRTC disable path now stops DISPC without a reset (as the vendor's
@@ -342,5 +342,5 @@ index 947fca359..3b78aedfe 100644
  };
  module_platform_driver(sprd_dispc_platform_driver);
 -- 
-2.47.3
+2.34.1
 

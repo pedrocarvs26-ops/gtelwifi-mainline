@@ -70,3 +70,25 @@ brcmfmac und hci_uart/btbcm laden Firmware aus `/vendor/firmware`. Fest eingebau
 gemountet ist (dasselbe Problem wie unter Alpine, dort per SDIO-Rebind umgangen). Deshalb `MODULES=y` und diese
 beiden als Module in `vendor_dlkm` (lädt `dlkm_loader_mainline`), alles andere bleibt `=y` wie getestet.
 `FW_LOADER_USER_HELPER=y` aus LOS `common.config` würde notfalls auch eingebaute Treiber bedienen.
+
+---
+
+## Linux 7.4-rc1 Update (November 2026)
+
+Linux 7.4-rc1 ported and fully booted into LineageOS 24.0 (Android 17) on physical `gtelwifi` hardware (SM-T560).
+
+### Key Architectural Solutions for Linux 7.4:
+1. **Android C-Binder Restoration**:
+   - Upstream Linux 7.4 moved `drivers/android/binder` to Rust (`binder.rs`), which does not compile or run on 32-bit ARM (ARMv7 Cortex-A7 lacks Rust kernel support).
+   - The C-Binder implementation was restored into `drivers/android/` and adapted to Linux 7.4 VFS API changes (`const struct mnt_idmap *idmap` in `binderfs_rename`), restoring complete Binder IPC functionality without crashing `servicemanager`.
+2. **DRM / KMS & V4L2 API Updates**:
+   - `drivers/gpu/drm/sprd/sprd_dispc.c`: Updated to use `atomic_create_state` and `drmm_encoder_init` matching Linux 7.4 DRM subsystem.
+   - `drivers/media/i2c/s5k4ecgx.c` and `sr200pc20m.c`: Updated to use `v4l2_subdev_client_info` API in Linux 7.4.
+3. **Built-in Wi-Fi & Bluetooth with Embedded Firmware**:
+   - To eliminate dependency on pre-existing `/vendor/lib/modules` (which failed with `Exec format error` due to kernel version change) and bypass early boot probe race conditions before `/vendor` is mounted:
+     - `CONFIG_BRCMFMAC=y` and `CONFIG_CFG80211=y`
+     - `CONFIG_BT=y`, `CONFIG_BT_HCIUART=y`, `CONFIG_BT_HCIUART_BCM=y`
+     - `CONFIG_EXTRA_FIRMWARE="brcm/brcmfmac43430-sdio.bin brcm/brcmfmac43430-sdio.clm_blob brcm/brcmfmac43430-sdio.txt brcm/BCM43430A1.hcd"`
+     - Embedded all firmware blobs into `zImage` (adds ~445 KB).
+     - Added `brcmfmac.feature_disable=0x2000` to `CONFIG_CMDLINE`.
+   - Result: Wi-Fi (`wlan0`) and Bluetooth (`hci0`) initialize instantly at boot, Wi-Fi networks scan cleanly, and Bluetooth connects seamlessly.

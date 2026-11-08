@@ -1,7 +1,7 @@
-From 33d21d90c03ce8ec624230488dd70be932a9f7e2 Mon Sep 17 00:00:00 2001
+From 6ea08726062aea0e068e185f0c7c5cc74b7980f9 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 08:34:00 +0000
-Subject: [PATCH 039/106] rtc: sc27xx: keep the alarm interrupt armed in
+Subject: [PATCH 039/110] rtc: sc27xx: keep the alarm interrupt armed in
  suspend
 
 The alarm interrupt comes from the PMIC's regmap-irq chip, which masks
@@ -46,5 +46,5 @@ index 2b83561d4..bb0a15c60 100644
  	rtc->rtc->range_min = 0;
  	rtc->rtc->range_max = 5662310399LL;
 -- 
-2.47.3
+2.34.1
 

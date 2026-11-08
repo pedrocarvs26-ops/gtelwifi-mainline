@@ -1,7 +1,7 @@
-From 4fd2ceb828a7f9f194079162c075c04716a23462 Mon Sep 17 00:00:00 2001
+From e65a179caacc3e20614c60f9c81bcf97a3a6cfd9 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 22:56:50 +0000
-Subject: [PATCH 033/106] ARM: dts: sc7730: I2C0 for the gtelwifi camera
+Subject: [PATCH 033/110] ARM: dts: sc7730: I2C0 for the gtelwifi camera
  sensors
 
 I2C0 (gate and reset bit 8 in AP_APB) carries the rear Samsung S5K4ECGX
@@ -60,5 +60,5 @@ index e23ce14e4..f35c91c2b 100644
  		 * I2C1. Source clock 26 MHz (AP_CLK_I2C1_CFG mux 0, as the
  		 * vendor leaves it); gate and reset are bit 9 in AP_APB.
 -- 
-2.47.3
+2.34.1
 

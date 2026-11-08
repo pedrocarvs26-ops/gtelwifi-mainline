@@ -1,7 +1,7 @@
-From 368332b4f4ab05ac0dfbbf69b869b84aed02cd19 Mon Sep 17 00:00:00 2001
+From 03e15f26de4714e3b1e03b76ffa32efe91d12d7b Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 09:45:49 +0000
-Subject: [PATCH 048/106] ARM: dts: sc7730: DISPC takeover and a CMA pool on
+Subject: [PATCH 048/110] ARM: dts: sc7730: DISPC takeover and a CMA pool on
  the gtelwifi
 
 DISPC has no IOMMU, so its buffers come from a 64 MiB CMA pool in lowmem
@@ -87,5 +87,5 @@ index b7fa30bca..3053ec365 100644
  		 * Mali-400 MP2, all units on one interrupt line. Its AXI enable
  		 * (AON_APB EB0 bit 27) is switched with the power domain.
 -- 
-2.47.3
+2.34.1
 

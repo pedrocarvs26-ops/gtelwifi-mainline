@@ -1,7 +1,7 @@
-From 37bc4a4394b7c7d82931d846678a85eb01beee3a Mon Sep 17 00:00:00 2001
+From e25086af97d509f235854f0dac458340324537a4 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Wed, 4 Nov 2026 19:42:00 +0000
-Subject: [PATCH 096/106] mm: bound PTE batches by the page table, not
+Subject: [PATCH 096/110] mm: bound PTE batches by the page table, not
  pmd_addr_end()
 
 move_present_ptes(), folio_unmap_pte_batch(), folio_referenced_one() and
@@ -43,10 +43,10 @@ Assisted-by: Claude Opus 5.5
  4 files changed, 24 insertions(+), 5 deletions(-)
 
 diff --git a/mm/internal.h b/mm/internal.h
-index 38b116521..9bc69c086 100644
+index 566cbd2dc..f6beb48f7 100644
 --- a/mm/internal.h
 +++ b/mm/internal.h
-@@ -379,6 +379,25 @@ static inline pte_t __pte_batch_clear_ignored(pte_t pte, fpb_t flags)
+@@ -384,6 +384,25 @@ static inline pte_t __pte_batch_clear_ignored(pte_t pte, fpb_t flags)
  	return pte_mkold(pte);
  }
  
@@ -73,10 +73,10 @@ index 38b116521..9bc69c086 100644
   * folio_pte_batch_flags - detect a PTE batch for a large folio
   * @folio: The large folio to detect a PTE batch for.
 diff --git a/mm/memory.c b/mm/memory.c
-index 8b0c2c735..4885f7989 100644
+index 0fb676dd2..e64c6300f 100644
 --- a/mm/memory.c
 +++ b/mm/memory.c
-@@ -5061,7 +5061,7 @@ vm_fault_t do_swap_page(struct vm_fault *vmf)
+@@ -5130,7 +5130,7 @@ vm_fault_t do_swap_page(struct vm_fault *vmf)
  
  		if (unlikely(folio_start < max(address & PMD_MASK, vma->vm_start)))
  			goto check_folio;
@@ -86,10 +86,10 @@ index 8b0c2c735..4885f7989 100644
  
  		folio_ptep = vmf->pte - idx;
 diff --git a/mm/rmap.c b/mm/rmap.c
-index f3b21aaa3..ec18a1490 100644
+index 1131b76bb..100bdd476 100644
 --- a/mm/rmap.c
 +++ b/mm/rmap.c
-@@ -971,7 +971,7 @@ static bool folio_referenced_one(struct folio *folio,
+@@ -969,7 +969,7 @@ static bool folio_referenced_one(struct folio *folio,
  		}
  
  		if (pvmw.pte && folio_test_large(folio)) {
@@ -98,7 +98,7 @@ index f3b21aaa3..ec18a1490 100644
  			const unsigned int max_nr = (end_addr - address) >> PAGE_SHIFT;
  			pte_t pteval = ptep_get(pvmw.pte);
  
-@@ -1965,7 +1965,7 @@ static inline unsigned int folio_unmap_pte_batch(struct folio *folio,
+@@ -1963,7 +1963,7 @@ static inline unsigned int folio_unmap_pte_batch(struct folio *folio,
  		return 1;
  
  	/* We may only batch within a single VMA and a single page table. */
@@ -108,10 +108,10 @@ index f3b21aaa3..ec18a1490 100644
  
  	/* We only support lazyfree or file folios batching for now ... */
 diff --git a/mm/userfaultfd.c b/mm/userfaultfd.c
-index 74f04c323..a018a8597 100644
+index 928ad95ee..d42d2e198 100644
 --- a/mm/userfaultfd.c
 +++ b/mm/userfaultfd.c
-@@ -1321,8 +1321,8 @@ static long move_present_ptes(struct mm_struct *mm,
+@@ -1293,8 +1293,8 @@ static long move_present_ptes(struct mm_struct *mm,
  	unsigned long src_start = src_addr;
  	unsigned long src_end;
  
@@ -123,5 +123,5 @@ index 74f04c323..a018a8597 100644
  	double_pt_lock(dst_ptl, src_ptl);
  
 -- 
-2.47.3
+2.34.1
 

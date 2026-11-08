@@ -1,7 +1,7 @@
-From f42387ff1c76227e27792fb0a6b440defcbc2931 Mon Sep 17 00:00:00 2001
+From 0e9a10b43c79863afa2b240dec47faf408265b4d Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 15:37:41 +0000
-Subject: [PATCH 006/106] ARM: sprd: restart: Samsung INFORM area is at 0xf80
+Subject: [PATCH 006/110] ARM: sprd: restart: Samsung INFORM area is at 0xf80
  in IRAM0
 
 The vendor header location (0x50003000) holds code on this board, and
@@ -55,5 +55,5 @@ index c5b7292d9..a4fe450cb 100644
  #define SEC_INFORM2		0x0c
  #define SEC_INFORM3		0x10
 -- 
-2.47.3
+2.34.1
 

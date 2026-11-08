@@ -1,7 +1,7 @@
-From 32d938549e5ce5baf5d9ad9a39aeed92724de9f9 Mon Sep 17 00:00:00 2001
+From c0258202e7c0fe60cff50dbce3cab67937bafc39 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 22:48:55 +0000
-Subject: [PATCH 031/106] mmc: sdhci-sc7730: select the base clock, honour the
+Subject: [PATCH 031/110] mmc: sdhci-sc7730: select the base clock, honour the
  SDIO0 divider
 
 The bootloader leaves the microSD host SDIO0 alone, its clock config at
@@ -84,5 +84,5 @@ index 1626b2b03..494a4d8d2 100644
  	of_property_read_u32(dev->of_node, "sprd,write-delay", &priv->write_delay);
  	of_property_read_u32(dev->of_node, "sprd,read-pos-delay",
 -- 
-2.47.3
+2.34.1
 

@@ -1,7 +1,7 @@
-From 06a44923aa58d2f2af6069c93051f6fe14521edb Mon Sep 17 00:00:00 2001
+From 929f56f148877da52b4a059ade5122681c6f6729 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 22:35:29 +0000
-Subject: [PATCH 026/106] power: supply: smb347: charge_behaviour to inhibit
+Subject: [PATCH 026/110] power: supply: smb347: charge_behaviour to inhibit
  charging
 
 Let user space or a fuel gauge with a battery thermistor stop charging
@@ -17,7 +17,7 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  1 file changed, 55 insertions(+)
 
 diff --git a/drivers/power/supply/smb347-charger.c b/drivers/power/supply/smb347-charger.c
-index 47de57304..96bfd1f7a 100644
+index 14952ee0a..3d4f421a5 100644
 --- a/drivers/power/supply/smb347-charger.c
 +++ b/drivers/power/supply/smb347-charger.c
 @@ -153,6 +153,7 @@
@@ -131,5 +131,5 @@ index 47de57304..96bfd1f7a 100644
  	.num_properties	= ARRAY_SIZE(smb347_properties),
  };
 -- 
-2.47.3
+2.34.1
 

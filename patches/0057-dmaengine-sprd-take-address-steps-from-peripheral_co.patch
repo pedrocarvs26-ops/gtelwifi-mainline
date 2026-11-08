@@ -1,7 +1,7 @@
-From 13d58a300889e0335fefb60122c518919dc2129f Mon Sep 17 00:00:00 2001
+From 3b451737a0430e148d5c436c2c12cca91053396a Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 12:10:52 +0000
-Subject: [PATCH 057/106] dmaengine: sprd: take address steps from
+Subject: [PATCH 057/110] dmaengine: sprd: take address steps from
  peripheral_config
 
 The address step of a channel follows the data width. Interleaved audio
@@ -21,7 +21,7 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  2 files changed, 30 insertions(+)
 
 diff --git a/drivers/dma/sprd-dma.c b/drivers/dma/sprd-dma.c
-index 514e1a205..ff8685e9e 100644
+index ee0eea194..b5b9891d8 100644
 --- a/drivers/dma/sprd-dma.c
 +++ b/drivers/dma/sprd-dma.c
 @@ -199,6 +199,7 @@ struct sprd_dma_chn {
@@ -32,7 +32,7 @@ index 514e1a205..ff8685e9e 100644
  	u32			chn_num;
  	u32			dev_id;
  	enum sprd_dma_chn_mode	chn_mode;
-@@ -804,6 +805,11 @@ static int sprd_dma_fill_desc(struct dma_chan *chan,
+@@ -784,6 +785,11 @@ static int sprd_dma_fill_desc(struct dma_chan *chan,
  		src_step = SPRD_DMA_NONE_STEP;
  	}
  
@@ -44,7 +44,7 @@ index 514e1a205..ff8685e9e 100644
  	src_datawidth = sprd_dma_get_datawidth(slave_cfg->src_addr_width);
  	if (src_datawidth < 0) {
  		dev_err(sdev->dma_dev.dev, "invalid source datawidth\n");
-@@ -1070,6 +1076,15 @@ static int sprd_dma_slave_config(struct dma_chan *chan,
+@@ -1050,6 +1056,15 @@ static int sprd_dma_slave_config(struct dma_chan *chan,
  	struct dma_slave_config *slave_cfg = &schan->slave_cfg;
  
  	memcpy(slave_cfg, config, sizeof(*config));
@@ -85,5 +85,5 @@ index d09c6f6f6..851ce7952 100644
 +
  #endif
 -- 
-2.47.3
+2.34.1
 

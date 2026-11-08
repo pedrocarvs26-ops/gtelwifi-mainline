@@ -1,7 +1,7 @@
-From ceb409369c64675ffd6fb85f85048b889235e2ed Mon Sep 17 00:00:00 2001
+From d8d5fc2505efb47d30b0644e3eda2801026f103c Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 11:29:35 +0000
-Subject: [PATCH 054/106] ASoC: sprd: add a DAI driver for the SC7730 VBC
+Subject: [PATCH 054/110] ASoC: sprd: add a DAI driver for the SC7730 VBC
  (r2p0)
 
 The voice band codec block of the 32-bit Spreadtrum SoCs moves PCM data
@@ -363,5 +363,5 @@ index 000000000..f60dcc507
 +MODULE_DESCRIPTION("Spreadtrum SC7730 VBC and audio DP CPU DAI");
 +MODULE_LICENSE("GPL");
 -- 
-2.47.3
+2.34.1
 

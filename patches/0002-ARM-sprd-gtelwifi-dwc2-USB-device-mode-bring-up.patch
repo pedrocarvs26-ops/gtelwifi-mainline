@@ -1,7 +1,7 @@
-From 24ddf77651aa50ef5206e34ad0b9db946619a370 Mon Sep 17 00:00:00 2001
+From 54d567ff21001f70847b607ee744b553c63de415 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 14:33:09 +0000
-Subject: [PATCH 002/106] ARM: sprd: gtelwifi: dwc2 USB device mode (bring-up)
+Subject: [PATCH 002/110] ARM: sprd: gtelwifi: dwc2 USB device mode (bring-up)
 
 Power up the SC7730 USB PHY like the vendor kernel does (SC2723 LDO_USB
 over ADI, PHY power-down, AHB clock, soft resets, PHY tune) from a small
@@ -280,5 +280,5 @@ index 000000000..c81cdb471
 +}
 +subsys_initcall(sprd_usb_bringup);
 -- 
-2.47.3
+2.34.1
 

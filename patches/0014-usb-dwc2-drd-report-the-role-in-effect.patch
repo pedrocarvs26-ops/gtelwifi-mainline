@@ -1,7 +1,7 @@
-From 89518b633f3816da557f9c19cc052409c116eabe Mon Sep 17 00:00:00 2001
+From a41c5802a6c5a3d566ed9a59e72253b391dada00 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 19:24:06 +0000
-Subject: [PATCH 014/106] usb: dwc2: drd: report the role in effect
+Subject: [PATCH 014/110] usb: dwc2: drd: report the role in effect
 
 The role switch has no .get callback, so the class reports the role it
 cached on the last set, which is "none" until something sets one, even
@@ -28,7 +28,7 @@ Assisted-by: Claude Opus 5.5
  2 files changed, 20 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/usb/dwc2/core.h b/drivers/usb/dwc2/core.h
-index 767251aa1..0c8051f4c 100644
+index 015a5fb78..0d4552520 100644
 --- a/drivers/usb/dwc2/core.h
 +++ b/drivers/usb/dwc2/core.h
 @@ -15,6 +15,7 @@
@@ -117,5 +117,5 @@ index 1ad8fa3f8..3a6557e81 100644
  
  		if (role == USB_ROLE_NONE) {
 -- 
-2.47.3
+2.34.1
 

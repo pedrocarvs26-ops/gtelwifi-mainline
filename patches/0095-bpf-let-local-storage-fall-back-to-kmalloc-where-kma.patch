@@ -1,7 +1,7 @@
-From 93eab1ae4586d8ea0e5ecd41aebe97e2d841f4b9 Mon Sep 17 00:00:00 2001
+From 8a51939b8b346d48da9712f8ad355547b6c17559 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Wed, 4 Nov 2026 19:04:00 +0000
-Subject: [PATCH 095/106] bpf: let local storage fall back to kmalloc where
+Subject: [PATCH 095/110] bpf: let local storage fall back to kmalloc where
  kmalloc_nolock() fails
 
 Local storage elements and the per owner storage are allocated with
@@ -30,7 +30,7 @@ Assisted-by: Claude Opus 5.5
  1 file changed, 25 insertions(+), 4 deletions(-)
 
 diff --git a/kernel/bpf/bpf_local_storage.c b/kernel/bpf/bpf_local_storage.c
-index 6fc6a4b67..5827782df 100644
+index b12fcec47..5247e13be 100644
 --- a/kernel/bpf/bpf_local_storage.c
 +++ b/kernel/bpf/bpf_local_storage.c
 @@ -51,6 +51,29 @@ owner_storage(struct bpf_local_storage_map *smap, void *owner)
@@ -73,7 +73,7 @@ index 6fc6a4b67..5827782df 100644
  
  	if (selem) {
  		RCU_INIT_POINTER(SDATA(selem)->smap, smap);
-@@ -487,8 +509,7 @@ int bpf_local_storage_alloc(void *owner,
+@@ -512,8 +534,7 @@ int bpf_local_storage_alloc(void *owner,
  	if (err)
  		return err;
  
@@ -84,5 +84,5 @@ index 6fc6a4b67..5827782df 100644
  		err = -ENOMEM;
  		goto uncharge;
 -- 
-2.47.3
+2.34.1
 

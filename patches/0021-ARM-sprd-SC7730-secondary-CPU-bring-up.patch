@@ -1,7 +1,7 @@
-From f585ca5f350aa23202c758acb5d2f61c6db9a157 Mon Sep 17 00:00:00 2001
+From 6b48bfb52c01cdcf4cc26ffb5bce60e576c2b2cf Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 20:58:23 +0000
-Subject: [PATCH 021/106] ARM: sprd: SC7730 secondary CPU bring-up
+Subject: [PATCH 021/110] ARM: sprd: SC7730 secondary CPU bring-up
 
 Cores 1-3 come out of reset into the boot ROM, which waits for their bit
 in the AP AHB HOLDING_PEN register and jumps to JMP_ADDR_CA7_Cn, in
@@ -226,5 +226,5 @@ index 000000000..f6b542667
 +};
 +CPU_METHOD_OF_DECLARE(sc7730_smp, "sprd,sc7730-smp", &sc7730_smp_ops);
 -- 
-2.47.3
+2.34.1
 

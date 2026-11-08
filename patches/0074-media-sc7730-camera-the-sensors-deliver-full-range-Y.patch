@@ -1,7 +1,7 @@
-From e93b5a3656f1186cde5224f77823b9c899787ce9 Mon Sep 17 00:00:00 2001
+From ca6b4e1ccbbd6767246529e966c08fe22ad5c306 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 17:10:00 +0000
-Subject: [PATCH 074/106] media: sc7730 camera: the sensors deliver full-range
+Subject: [PATCH 074/110] media: sc7730 camera: the sensors deliver full-range
  YUV
 
 The ISPs of the S5K4ECGX and SR200PC20M output JFIF-style YUV: captured
@@ -58,5 +58,5 @@ index b348f9d9e..c092079ef 100644
  }
  
 -- 
-2.47.3
+2.34.1
 

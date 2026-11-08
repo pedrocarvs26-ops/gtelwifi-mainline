@@ -1,7 +1,7 @@
-From c8bf2c5c1452d55773edd5ce47e5138c3391c171 Mon Sep 17 00:00:00 2001
+From 1c3d9d63efda23fa1dccd1e27dceab6d8b3dd17f Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 14:45:10 +0000
-Subject: [PATCH 003/106] ARM: sprd: gtelwifi: dwc2 FIFO sizes, dump core
+Subject: [PATCH 003/110] ARM: sprd: gtelwifi: dwc2 FIFO sizes, dump core
  config
 
 dwc2 defaults (RX 2048, NP TX 1024, averaged TX FIFOs) exceed what this
@@ -139,5 +139,5 @@ index c81cdb471..70b8a279f 100644
  	if (usb)
  		iounmap(usb);
 -- 
-2.47.3
+2.34.1
 
