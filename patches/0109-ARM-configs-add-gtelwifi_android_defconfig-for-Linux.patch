@@ -1,8 +1,7 @@
-From e415be0113341c9e3c679a14443c36d9fbc54dd0 Mon Sep 17 00:00:00 2001
+From 7b3a21db7541ee0f70cf449cf46ee0e79c8d7ee9 Mon Sep 17 00:00:00 2001
 From: Pedro Carvs <pedrocarvs26@gmail.com>
 Date: Sun, 8 Nov 2026 17:23:46 +0000
-Subject: [PATCH 109/109] ARM: configs: add gtelwifi_android_defconfig for
- Linux 7.4
+Subject: [PATCH] ARM: configs: add gtelwifi_android_defconfig for Linux 7.4
 
 Adds the verified working Android 17 / LineageOS 24 defconfig with:
 - C Binder IPC and binderfs
@@ -16,7 +15,7 @@ Adds the verified working Android 17 / LineageOS 24 defconfig with:
 
 diff --git a/arch/arm/configs/gtelwifi_android_defconfig b/arch/arm/configs/gtelwifi_android_defconfig
 new file mode 100644
-index 000000000..fa4bc2687
+index 000000000..8dc630e80
 --- /dev/null
 +++ b/arch/arm/configs/gtelwifi_android_defconfig
 @@ -0,0 +1,380 @@
@@ -72,7 +71,7 @@ index 000000000..fa4bc2687
 +CONFIG_HZ_250=y
 +CONFIG_THUMB2_KERNEL=y
 +CONFIG_HIGHMEM=y
-+CONFIG_CMDLINE="printk.devkmsg=on printk.time=1 loglevel=4 log_buf_len=4M cma=192M@0x8a000000-0x9e800000 loop.max_part=7 rw vt.global_cursor_default=0 panic=10 firmware_class.path=/vendor/firmware/ brcmfmac.feature_disable=0x2000 androidboot.hardware=gtelwifi androidboot.boot_devices=soc/20600000.mmc androidboot.super_partition=SYSTEM androidboot.selinux=permissive androidboot.verifiedbootstate=orange androidboot.init_fatal_reboot_target=recovery"
++CONFIG_CMDLINE="printk.devkmsg=on printk.time=1 loglevel=4 log_buf_len=4M cma=192M@0x8a000000-0x9e800000 loop.max_part=7 rw vt.global_cursor_default=0 panic=10 firmware_class.path=/vendor/firmware/ brcmfmac.feature_disable=0x2000 androidboot.hardware=gtelwifi androidboot.boot_devices=soc/20600000.mmc androidboot.super_partition=SYSTEM androidboot.selinux=enforcing enforcing=1 androidboot.verifiedbootstate=orange androidboot.init_fatal_reboot_target=recovery"
 +CONFIG_CMDLINE_EXTEND=y
 +CONFIG_CPU_FREQ=y
 +CONFIG_CPU_FREQ_STAT=y
