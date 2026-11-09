@@ -1,7 +1,7 @@
-From ba2a593337710b39876bf939d165bf44665f3bfa Mon Sep 17 00:00:00 2001
+From 4b89396f9f2230f1001e9c00611d5bf53681e0c7 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 12:10:52 +0000
-Subject: [PATCH 058/110] ASoC: sprd: sprd-pcm-dma: support interleaved access
+Subject: [PATCH 058/109] ASoC: sprd: sprd-pcm-dma: support interleaved access
 
 Offer interleaved access next to non-interleaved. For an interleaved
 stream with more than one channel, each DMA channel starts at its own
@@ -24,7 +24,7 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  1 file changed, 33 insertions(+), 5 deletions(-)
 
 diff --git a/sound/soc/sprd/sprd-pcm-dma.c b/sound/soc/sprd/sprd-pcm-dma.c
-index 5a90100f3..0a971628f 100644
+index 87f19fce1..1de9c6563 100644
 --- a/sound/soc/sprd/sprd-pcm-dma.c
 +++ b/sound/soc/sprd/sprd-pcm-dma.c
 @@ -32,11 +32,13 @@ struct sprd_pcm_dma_private {
@@ -61,7 +61,7 @@ index 5a90100f3..0a971628f 100644
 +	else
 +		dma_private->dma_addr_offset = totsize / channels;
  
- 	sg = devm_kcalloc(component->dev, sg_num, sizeof(*sg), GFP_KERNEL);
+ 	sg = devm_kzalloc_objs(component->dev, *sg, sg_num);
  	if (!sg) {
 @@ -230,6 +243,7 @@ static int sprd_pcm_hw_params(struct snd_soc_component *component,
  		struct dma_chan *chan = data->chan;

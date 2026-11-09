@@ -1,7 +1,7 @@
-From 95b108ebb33f64d0e38e16d5d2591d88304bfcbe Mon Sep 17 00:00:00 2001
+From 3004a1bf603270b9cfc71aed16a8aa17321925c5 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 17:50:09 +0000
-Subject: [PATCH 012/110] clocksource: sprd-sc8830: CPU cycle counter as delay
+Subject: [PATCH 012/109] clocksource: sprd-sc8830: CPU cycle counter as delay
  timer
 
 ARM32 random_get_entropy() uses the delay timer; without one it falls

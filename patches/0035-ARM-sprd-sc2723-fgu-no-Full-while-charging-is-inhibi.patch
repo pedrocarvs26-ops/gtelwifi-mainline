@@ -1,7 +1,7 @@
-From eaded7424b3ba27131866dbab7a4fb1fd687bd3f Mon Sep 17 00:00:00 2001
+From edfe7f41aa12751a56c4405d148fbe67c59e118b Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 23:17:58 +0000
-Subject: [PATCH 035/110] ARM: sprd: sc2723-fgu: no Full while charging is
+Subject: [PATCH 035/109] ARM: sprd: sc2723-fgu: no Full while charging is
  inhibited
 
 smb347 reports Full whenever the charger terminated once and no charge

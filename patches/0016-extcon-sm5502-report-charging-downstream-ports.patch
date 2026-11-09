@@ -1,7 +1,7 @@
-From f15e3093587cc4a9bc5b611ed0865fb417b96525 Mon Sep 17 00:00:00 2001
+From 17c7a9be6f33adf8b861f6cb6fef68d6e4b6a12b Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 20:04:37 +0000
-Subject: [PATCH 016/110] extcon: sm5502: report charging downstream ports
+Subject: [PATCH 016/109] extcon: sm5502: report charging downstream ports
 
 DEV_TYPE1 bit 5 (USB_CHG) marks a BC1.2 charging downstream port, a
 USB host port that may deliver up to 1.5 A. The driver did not know it
@@ -17,7 +17,7 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  1 file changed, 13 insertions(+)
 
 diff --git a/drivers/extcon/extcon-sm5502.c b/drivers/extcon/extcon-sm5502.c
-index c8c4b9ef7..f82d847ea 100644
+index 9ab2553f1..9586f0d9a 100644
 --- a/drivers/extcon/extcon-sm5502.c
 +++ b/drivers/extcon/extcon-sm5502.c
 @@ -131,6 +131,7 @@ static const unsigned int sm5502_extcon_cable[] = {

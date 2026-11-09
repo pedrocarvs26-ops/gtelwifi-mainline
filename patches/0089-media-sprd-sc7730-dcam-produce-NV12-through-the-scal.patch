@@ -1,7 +1,7 @@
-From 267eb1726622b1f5641080d4e1cc177670857129 Mon Sep 17 00:00:00 2001
+From 8c4ac14e74108e63c0a95bfb181759d87ef00b3c Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Tue, 3 Nov 2026 11:27:54 +0000
-Subject: [PATCH 089/110] media: sprd: sc7730-dcam: produce NV12 through the
+Subject: [PATCH 089/109] media: sprd: sc7730-dcam: produce NV12 through the
  scaler
 
 With the path 1 scaler bypassed, the YUV420 output mode does not halve

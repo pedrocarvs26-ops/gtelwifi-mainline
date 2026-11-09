@@ -1,7 +1,7 @@
-From 40bbe1e1db3a9d8baa719d07e87fd52922026cc0 Mon Sep 17 00:00:00 2001
+From b5645f6fd14bac70eefbdc25fd6d8c9ebc2aab8d Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 22:39:35 +0000
-Subject: [PATCH 080/110] drm/sprd: sc7730-dispc: allow disabling the CRTC
+Subject: [PATCH 080/109] drm/sprd: sc7730-dispc: allow disabling the CRTC
  completely
 
 The CRTC check required a primary plane in every state, also when the

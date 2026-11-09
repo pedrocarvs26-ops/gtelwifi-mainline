@@ -1,7 +1,7 @@
-From 28ffe33d303ffbc4b756eb70e20b22ba708e3c0f Mon Sep 17 00:00:00 2001
+From 987c472a6a62f4056ec75c54eff8d48fddd3bb95 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 20:41:27 +0000
-Subject: [PATCH 077/110] media: i2c: sr200pc20m: add brightness, contrast and
+Subject: [PATCH 077/109] media: i2c: sr200pc20m: add brightness, contrast and
  saturation controls
 
 Page 0x10 of the ISP holds the image adjustments that the stock Android

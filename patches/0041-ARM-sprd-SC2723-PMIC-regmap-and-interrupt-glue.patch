@@ -1,7 +1,7 @@
-From 4e6cddfa81c3b2e5ab403a3e0bd9389970542318 Mon Sep 17 00:00:00 2001
+From cf2eff0540b7d0ebe7738bf372c63d95fd443282 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 08:34:01 +0000
-Subject: [PATCH 041/110] ARM: sprd: SC2723 PMIC regmap and interrupt glue
+Subject: [PATCH 041/109] ARM: sprd: SC2723 PMIC regmap and interrupt glue
 
 Expose the SC2723 as a regmap over the ADI helpers, with its interrupt
 controller (offset 0x380, GIC SPI 38) as a regmap-irq chip, and populate

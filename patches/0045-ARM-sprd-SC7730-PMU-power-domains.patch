@@ -1,7 +1,7 @@
-From a532afd3ccddf579a82fb836e15474841b8fa188 Mon Sep 17 00:00:00 2001
+From 5fc53214ef478480c046cc1c1ae7e01f0229d12c Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 09:23:24 +0000
-Subject: [PATCH 045/110] ARM: sprd: SC7730 PMU power domains
+Subject: [PATCH 045/109] ARM: sprd: SC7730 PMU power domains
 
 Expose GPU_TOP and MM_TOP of the PMU as generic PM domains: PD_*_CFG
 bit 25 forces a domain off, its state is a nibble in PWR_STATUS0_DBG,

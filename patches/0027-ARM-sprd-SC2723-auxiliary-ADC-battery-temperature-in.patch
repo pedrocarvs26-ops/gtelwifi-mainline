@@ -1,7 +1,7 @@
-From dec1fd143f6160c87c5e569ffa07f09fe83e1399 Mon Sep 17 00:00:00 2001
+From 326da3aec4a3020b1a765d94a329bc00460e0f77 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 22:35:29 +0000
-Subject: [PATCH 027/110] ARM: sprd: SC2723 auxiliary ADC, battery temperature
+Subject: [PATCH 027/109] ARM: sprd: SC2723 auxiliary ADC, battery temperature
  in the fuel gauge
 
 A small IIO driver for the SC2723's auxiliary ADC (raw counts, one

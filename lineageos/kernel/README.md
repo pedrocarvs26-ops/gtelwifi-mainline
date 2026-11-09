@@ -73,9 +73,9 @@ beiden als Module in `vendor_dlkm` (lädt `dlkm_loader_mainline`), alles andere 
 
 ---
 
-## Linux 7.4-rc1 Update (November 2026)
+## Linux 7.4-rc1 / 7.4-rc2 Update (November 2026)
 
-Linux 7.4-rc1 ported and fully booted into LineageOS 24.0 (Android 17) on physical `gtelwifi` hardware (SM-T560).
+Linux 7.4-rc1 and 7.4-rc2 ported and fully booted into LineageOS 24.0 (Android 17) on physical `gtelwifi` hardware (SM-T560).
 
 ### Key Architectural Solutions for Linux 7.4:
 1. **Android C-Binder Restoration**:

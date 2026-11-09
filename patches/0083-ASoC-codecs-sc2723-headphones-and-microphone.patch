@@ -1,7 +1,7 @@
-From 75ddff21a6659532fa12519d9b7f19a35c8acdf1 Mon Sep 17 00:00:00 2001
+From 70edc2fdd59825a8e857de1d0a050d5082f831d4 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 23:00:48 +0000
-Subject: [PATCH 083/110] ASoC: codecs: sc2723: headphones and microphone
+Subject: [PATCH 083/109] ASoC: codecs: sc2723: headphones and microphone
 
 Add the headphone output and the main microphone capture path:
 

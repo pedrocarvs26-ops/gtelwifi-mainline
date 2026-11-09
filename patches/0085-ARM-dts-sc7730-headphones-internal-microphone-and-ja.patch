@@ -1,7 +1,7 @@
-From 9f856e29c67d91c4020c7e944c6e79f85effb4ee Mon Sep 17 00:00:00 2001
+From 7dcde7014ee4f81769373be713636936b952c19f Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 23:00:48 +0000
-Subject: [PATCH 085/110] ARM: dts: sc7730: headphones, internal microphone and
+Subject: [PATCH 085/109] ARM: dts: sc7730: headphones, internal microphone and
  jack detection
 
 Add the capture DMA requests to the PCM platform and route the

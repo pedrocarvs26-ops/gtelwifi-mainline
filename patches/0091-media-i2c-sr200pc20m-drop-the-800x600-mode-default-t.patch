@@ -1,7 +1,7 @@
-From 24f9e8c0751ccced1b52b705fc9a18e7aa421b6a Mon Sep 17 00:00:00 2001
+From 32267cf80b070b33f96279524196e4d5dcb1d7cf Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Tue, 3 Nov 2026 11:57:28 +0000
-Subject: [PATCH 091/110] media: i2c: sr200pc20m: drop the 800x600 mode,
+Subject: [PATCH 091/109] media: i2c: sr200pc20m: drop the 800x600 mode,
  default to 640x480
 
 Camera applications keep the sensor's default format for the preview,

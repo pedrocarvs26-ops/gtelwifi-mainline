@@ -1,7 +1,7 @@
-From 303324f32928103ee1e55eba82b9bf1d22806fb7 Mon Sep 17 00:00:00 2001
+From c5b923bfa3df9bb0fca5f02d675d1cc71839afa3 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 11:29:35 +0000
-Subject: [PATCH 053/110] ASoC: sprd: sprd-pcm-dma: advertise non-interleaved
+Subject: [PATCH 053/109] ASoC: sprd: sprd-pcm-dma: advertise non-interleaved
  access
 
 hw_params gives every channel its own DMA channel and points it at
@@ -20,7 +20,7 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/sound/soc/sprd/sprd-pcm-dma.c b/sound/soc/sprd/sprd-pcm-dma.c
-index bbd7516f8..5a90100f3 100644
+index 9bc1fe956..87f19fce1 100644
 --- a/sound/soc/sprd/sprd-pcm-dma.c
 +++ b/sound/soc/sprd/sprd-pcm-dma.c
 @@ -36,7 +36,7 @@ struct sprd_pcm_dma_private {

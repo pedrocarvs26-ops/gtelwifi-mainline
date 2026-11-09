@@ -1,7 +1,7 @@
-From f2e401461c81b75a1210b03ad71978b3f674d349 Mon Sep 17 00:00:00 2001
+From 6faf2272ecdb0e5cb945a57f0f905e3b39ac4f8d Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Thu, 5 Nov 2026 11:42:23 +0000
-Subject: [PATCH 102/110] media: i2c: sr200pc20m: drop the 1600x1200 mode
+Subject: [PATCH 101/109] media: i2c: sr200pc20m: drop the 1600x1200 mode
 
 The UXGA table runs at about 8 fps and only makes sense for stills, but
 there is no capture path that switches the sensor into it for a single

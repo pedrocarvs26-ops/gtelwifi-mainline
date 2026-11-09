@@ -1,7 +1,7 @@
-From ae841876bf20dc765c75a2191459a8af74c6ccce Mon Sep 17 00:00:00 2001
+From e415be0113341c9e3c679a14443c36d9fbc54dd0 Mon Sep 17 00:00:00 2001
 From: Pedro Carvs <pedrocarvs26@gmail.com>
 Date: Sun, 8 Nov 2026 17:23:46 +0000
-Subject: [PATCH 110/110] ARM: configs: add gtelwifi_android_defconfig for
+Subject: [PATCH 109/109] ARM: configs: add gtelwifi_android_defconfig for
  Linux 7.4
 
 Adds the verified working Android 17 / LineageOS 24 defconfig with:

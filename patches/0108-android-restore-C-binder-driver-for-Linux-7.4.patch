@@ -1,7 +1,7 @@
-From 1c5bd7b76fdf9f0333d53512452ce5ed481bd210 Mon Sep 17 00:00:00 2001
+From 629ad6f88a1d12ec56a59f75ccb8797a4d5e3b0f Mon Sep 17 00:00:00 2001
 From: Pedro Carvs <pedrocarvs26@gmail.com>
 Date: Sun, 8 Nov 2026 16:22:01 +0000
-Subject: [PATCH 109/110] android: restore C binder driver for Linux 7.4
+Subject: [PATCH 108/109] android: restore C binder driver for Linux 7.4
 
 Upstream 7.4 removed the C binder in favor of the Rust binder, but
 ARM32 (Cortex-A7) lacks Rust support in the kernel. Restoring the C

@@ -1,7 +1,7 @@
-From 95fd230d081f019208ed3b525a478af48a7979c6 Mon Sep 17 00:00:00 2001
+From 1aae6eadcbeac53889ec4062c8233d637fe01e32 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 22:48:55 +0000
-Subject: [PATCH 030/110] ARM: sprd: SC2723 LDOs, gate clocks, PMIC registers
+Subject: [PATCH 030/109] ARM: sprd: SC2723 LDOs, gate clocks, PMIC registers
  in debugfs
 
 Three pieces of bring-up glue on top of the ADI helpers:

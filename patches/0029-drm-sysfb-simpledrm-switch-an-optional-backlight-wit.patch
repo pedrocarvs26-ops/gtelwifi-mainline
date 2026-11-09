@@ -1,7 +1,7 @@
-From ad36bd9318abc0dc0afe25fae2ca6a2ae05f695d Mon Sep 17 00:00:00 2001
+From 7f9cc1837ff00c52e3b2914bb9ed15b5d4cab852 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 22:48:55 +0000
-Subject: [PATCH 029/110] drm/sysfb: simpledrm: switch an optional backlight
+Subject: [PATCH 029/109] drm/sysfb: simpledrm: switch an optional backlight
  with the CRTC
 
 A firmware framebuffer cannot blank its display, so a compositor that
@@ -32,7 +32,7 @@ index f7e481788..b078c68e3 100644
  	select DRM_CLIENT_SELECTION
  	select DRM_GEM_SHMEM_HELPER
 diff --git a/drivers/gpu/drm/sysfb/simpledrm.c b/drivers/gpu/drm/sysfb/simpledrm.c
-index 21ddf4502..85d350d7e 100644
+index deaeb7d1f..189a0f8cb 100644
 --- a/drivers/gpu/drm/sysfb/simpledrm.c
 +++ b/drivers/gpu/drm/sysfb/simpledrm.c
 @@ -1,6 +1,7 @@
@@ -53,7 +53,7 @@ index 21ddf4502..85d350d7e 100644
  
  	/* modesetting */
  	u32 formats[DRM_SYSFB_PLANE_NFORMATS(1)];
-@@ -583,8 +587,63 @@ static const struct drm_plane_funcs simpledrm_primary_plane_funcs = {
+@@ -581,8 +585,63 @@ static const struct drm_plane_funcs simpledrm_primary_plane_funcs = {
  	.destroy = drm_plane_cleanup,
  };
  
@@ -117,7 +117,7 @@ index 21ddf4502..85d350d7e 100644
  };
  
  static const struct drm_crtc_funcs simpledrm_crtc_funcs = {
-@@ -654,6 +713,9 @@ static struct simpledrm_device *simpledrm_device_create(struct drm_driver *drv,
+@@ -652,6 +711,9 @@ static struct simpledrm_device *simpledrm_device_create(struct drm_driver *drv,
  	if (ret)
  		return ERR_PTR(ret);
  	ret = simpledrm_device_attach_genpd(sdev);

@@ -1,7 +1,7 @@
-From 99ee4b5e02b5a7fcaf462fc1c1d6b94c5818e528 Mon Sep 17 00:00:00 2001
+From 318a05857472e60a9eb5cbe564cd64b97a890678 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 08:34:00 +0000
-Subject: [PATCH 037/110] ARM: dts: sc7730: gtelwifi: fix the accelerometer
+Subject: [PATCH 037/109] ARM: dts: sc7730: gtelwifi: fix the accelerometer
  mount matrix
 
 The matrix taken from the vendor's axis map has a determinant of -1, a

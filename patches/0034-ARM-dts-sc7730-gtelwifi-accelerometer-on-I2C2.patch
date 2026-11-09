@@ -1,7 +1,7 @@
-From 9c8aecc7a4f1864d2e7a898957169198b6508079 Mon Sep 17 00:00:00 2001
+From ca06cbf786ca27413e3863cdcee0082c0c2d9fe3 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 22:59:03 +0000
-Subject: [PATCH 034/110] ARM: dts: sc7730: gtelwifi accelerometer on I2C2
+Subject: [PATCH 034/109] ARM: dts: sc7730: gtelwifi accelerometer on I2C2
 
 The Galaxy Tab E has an ST LIS2HH12 (Samsung's "K2HH") at 0x1d on I2C2
 (0x70700000, gate and reset bit 10). Mainline st_accel drives it; the

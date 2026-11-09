@@ -1,7 +1,7 @@
-From 8bd430c4f85fdbb76e1801e1f793a93b7d789733 Mon Sep 17 00:00:00 2001
+From 2753631a2e1a7e6f64ce08ae7bbb03165dc33447 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 11:29:35 +0000
-Subject: [PATCH 055/110] ASoC: codecs: add the SC2723 PMIC audio codec
+Subject: [PATCH 055/109] ASoC: codecs: add the SC2723 PMIC audio codec
  (speaker path)
 
 The analog part of the SC7730's audio codec sits in the SC2723 PMIC

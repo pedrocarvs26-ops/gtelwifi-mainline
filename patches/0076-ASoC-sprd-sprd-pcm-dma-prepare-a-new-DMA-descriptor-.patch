@@ -1,7 +1,7 @@
-From ef948a02a8195a947efcf22b32d47642fd93eafd Mon Sep 17 00:00:00 2001
+From 0361c7c4d064e2bbc199ca9dd8d072b4417fc10d Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 20:31:21 +0000
-Subject: [PATCH 076/110] ASoC: sprd: sprd-pcm-dma: prepare a new DMA
+Subject: [PATCH 076/109] ASoC: sprd: sprd-pcm-dma: prepare a new DMA
  descriptor for every start
 
 The descriptor was prepared once in hw_params and submitted on every
@@ -37,7 +37,7 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  1 file changed, 45 insertions(+), 20 deletions(-)
 
 diff --git a/sound/soc/sprd/sprd-pcm-dma.c b/sound/soc/sprd/sprd-pcm-dma.c
-index 0a971628f..e17461af4 100644
+index 1de9c6563..966a9cbe8 100644
 --- a/sound/soc/sprd/sprd-pcm-dma.c
 +++ b/sound/soc/sprd/sprd-pcm-dma.c
 @@ -8,6 +8,7 @@
@@ -80,7 +80,7 @@ index 0a971628f..e17461af4 100644
  	else
  		dma_private->dma_addr_offset = totsize / channels;
  
--	sg = devm_kcalloc(component->dev, sg_num, sizeof(*sg), GFP_KERNEL);
+-	sg = devm_kzalloc_objs(component->dev, *sg, sg_num);
 -	if (!sg) {
 -		ret = -ENOMEM;
 -		goto sg_err;

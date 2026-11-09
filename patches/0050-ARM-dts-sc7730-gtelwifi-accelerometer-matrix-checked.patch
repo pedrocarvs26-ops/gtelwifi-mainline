@@ -1,7 +1,7 @@
-From 65f9e3461511da5a993719007e9a13866fd8c7b2 Mon Sep 17 00:00:00 2001
+From 65277049ac6af9b3ec034f68ee630d1e1f7eb459 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 10:32:29 +0000
-Subject: [PATCH 050/110] ARM: dts: sc7730: gtelwifi: accelerometer matrix,
+Subject: [PATCH 050/109] ARM: dts: sc7730: gtelwifi: accelerometer matrix,
  checked in all four orientations
 
 The previous matrix got portrait right but turned the picture the wrong

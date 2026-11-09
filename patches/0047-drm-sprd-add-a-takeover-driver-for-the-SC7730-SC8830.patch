@@ -1,7 +1,7 @@
-From 4e8e035e2e972380e4eb3b767183457e022a002a Mon Sep 17 00:00:00 2001
+From 145aea77a127d42861887565552cb52fd142e4b9 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 09:45:49 +0000
-Subject: [PATCH 047/110] drm/sprd: add a takeover driver for the SC7730/SC8830
+Subject: [PATCH 047/109] drm/sprd: add a takeover driver for the SC7730/SC8830
  DISPC
 
 The 32-bit Spreadtrum SoCs ("shark") have a display controller that

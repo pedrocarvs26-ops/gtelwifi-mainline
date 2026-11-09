@@ -1,7 +1,7 @@
-From c81316bfe4925617f0596efae520ce63217e5cef Mon Sep 17 00:00:00 2001
+From 007cd37ed95b2627ffdf3b64e52cee334831290a Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Thu, 5 Nov 2026 16:09:03 +0000
-Subject: [PATCH 106/110] ARM: sprd: sc7730: DDR self-refresh while suspended
+Subject: [PATCH 105/109] ARM: sprd: sc7730: DDR self-refresh while suspended
 
 The vendor's suspend switches the uMCTL2 DDR controller (0x30000000)
 from automatic power-down to automatic self-refresh (PWRCTL bit 0 set,

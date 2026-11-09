@@ -1,7 +1,7 @@
-From 3b8d20b0f2dd28a557d66a892b10c6dacb4a89f3 Mon Sep 17 00:00:00 2001
+From 8714faca4cba9163b427719c005cd265e7e9162b Mon Sep 17 00:00:00 2001
 From: Pedro Carvs <pedrocarvs26@gmail.com>
 Date: Sun, 8 Nov 2026 14:59:57 +0000
-Subject: [PATCH 107/110] drm/sprd: adapt dispc to Linux 7.4 DRM API
+Subject: [PATCH 106/109] drm/sprd: adapt dispc to Linux 7.4 DRM API
  (atomic_create_state and drmm_encoder_init)
 
 ---

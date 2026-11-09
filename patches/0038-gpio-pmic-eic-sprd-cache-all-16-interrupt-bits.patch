@@ -1,7 +1,7 @@
-From 373b783ecabbd6ed45bc7260e3e0cee10b2d3fcc Mon Sep 17 00:00:00 2001
+From fcf239beb8b640103919ad3ea3d186b4b7310c33 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 08:34:00 +0000
-Subject: [PATCH 038/110] gpio: pmic-eic-sprd: cache all 16 interrupt bits
+Subject: [PATCH 038/109] gpio: pmic-eic-sprd: cache all 16 interrupt bits
 
 The cached IEV, IE and TRIG values are u8, but the controller has 16
 EICs, so BIT(offset) is lost for offsets 8 to 15 and their interrupts
@@ -15,7 +15,7 @@ Signed-off-by: Deniz Kokden <koekdendeniz@gmail.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/gpio/gpio-pmic-eic-sprd.c b/drivers/gpio/gpio-pmic-eic-sprd.c
-index cb015fb5c..7ec923bb8 100644
+index 844b63735..a354dffad 100644
 --- a/drivers/gpio/gpio-pmic-eic-sprd.c
 +++ b/drivers/gpio/gpio-pmic-eic-sprd.c
 @@ -57,7 +57,7 @@ struct sprd_pmic_eic {

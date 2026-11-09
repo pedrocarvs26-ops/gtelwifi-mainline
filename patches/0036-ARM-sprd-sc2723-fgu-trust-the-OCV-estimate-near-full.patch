@@ -1,7 +1,7 @@
-From 79ff91e6dd81b066a909ffc8a89bbf1c2bbb6dc1 Mon Sep 17 00:00:00 2001
+From b72abbce6545814c18d730fb0a1260b69ed0786d Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 08:34:00 +0000
-Subject: [PATCH 036/110] ARM: sprd: sc2723-fgu: trust the OCV estimate near
+Subject: [PATCH 036/109] ARM: sprd: sc2723-fgu: trust the OCV estimate near
  full and empty
 
 A saved capacity within 25 % of the OCV estimate wins at probe, since the

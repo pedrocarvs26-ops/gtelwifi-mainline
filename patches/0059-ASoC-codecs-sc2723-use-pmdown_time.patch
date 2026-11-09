@@ -1,7 +1,7 @@
-From 72db05ff958ecdc8322f3c1f2a0d8572f83b17de Mon Sep 17 00:00:00 2001
+From 8973de2b678bf57ea15f47613e7be7c70b22d936 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 12:10:52 +0000
-Subject: [PATCH 059/110] ASoC: codecs: sc2723: use pmdown_time
+Subject: [PATCH 059/109] ASoC: codecs: sc2723: use pmdown_time
 
 Without use_pmdown_time in any component of the link, ASoC powers the
 path down as soon as a stream closes, so every new sound switched the

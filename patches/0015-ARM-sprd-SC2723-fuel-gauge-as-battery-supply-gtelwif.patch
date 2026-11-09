@@ -1,7 +1,7 @@
-From ea006ab01674a72c9b2db091a53e56ee1e3ad62c Mon Sep 17 00:00:00 2001
+From d52c66d3365da45ae0d3129818566016d27eaf56 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Sun, 1 Nov 2026 19:33:03 +0000
-Subject: [PATCH 015/110] ARM: sprd: SC2723 fuel gauge as battery supply;
+Subject: [PATCH 015/109] ARM: sprd: SC2723 fuel gauge as battery supply;
  gtelwifi: battery data
 
 The bootloader enables the FGU of the SC2723 PMIC at every boot. Read

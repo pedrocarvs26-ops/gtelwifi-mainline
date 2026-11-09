@@ -1,7 +1,7 @@
-From 69309a4f76be641d279bc778996c0ad1dd80ea7f Mon Sep 17 00:00:00 2001
+From ee0b819adae152b7582e9ae7231de61344bb9196 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Mon, 2 Nov 2026 23:00:48 +0000
-Subject: [PATCH 086/110] dt-bindings: describe the SC7730 and SC2723 hardware
+Subject: [PATCH 086/109] dt-bindings: describe the SC7730 and SC2723 hardware
  of the gtelwifi port
 
 Add schemas for every compatible string the gtelwifi device tree uses

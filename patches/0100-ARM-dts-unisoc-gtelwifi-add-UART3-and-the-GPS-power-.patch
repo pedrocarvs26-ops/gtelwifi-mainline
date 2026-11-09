@@ -1,7 +1,7 @@
-From d8d057903fce71b3a4eebdf53b7323a436a88a5b Mon Sep 17 00:00:00 2001
+From d36c2fcbb7f7b06d332ac7860110a853792117c6 Mon Sep 17 00:00:00 2001
 From: Deniz Kokden <koekdendeniz@gmail.com>
 Date: Thu, 5 Nov 2026 09:08:48 +0000
-Subject: [PATCH 101/110] ARM: dts: unisoc: gtelwifi: add UART3 and the GPS
+Subject: [PATCH 100/109] ARM: dts: unisoc: gtelwifi: add UART3 and the GPS
  power supplies
 
 The Broadcom BCM47520 GPS of the SM-T560 is a hosted receiver on UART3
